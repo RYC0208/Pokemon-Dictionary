@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PokemonCard from "./PokemonCard";
 
 // 스타일드 컴포넌트
 const DashBoardContainer = styled.div`
@@ -26,64 +27,44 @@ const DashBoardItem = styled.div`
   width: 100px;
   height: 100px;
   background-color: rgb(255, 255, 255);
-  border: 2px dotted rgb(204, 204, 204);
+  border: 2px dashed rgb(204, 204, 204);
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-
 `;
-const DashBoardPokeball = styled.img`
+const DashBoardPokemonball = styled.img`
   width: 50px;
   height: 50px;
 `;
-const DeleteButton = styled.button`
-    position: relative;
-    top: -75px;
-    left: 38px;
-    border: none;
-    width: 20px;
-    height: 20px;
-    color: white;
-    font-weight: bold;
-    background-color: red;
-    border-radius: 5px;
-    cursor: pointer;
-`;
 
-const DashBoard = ({ selectedPokemon }) => {
-    //fill 메소드 배열의 요소들을 value로 채움
-    // 매개변수는 value, start, end
-    // 만약 5의 값으로 0번 째 인덱스부터 3번 째 인덱스까지 채우고 싶으면
-    // fill(5, 0, 3)으로 설정하면 됨
-    const pocketSlots = Array(6).fill(null);
+const DashBoard = ({ selectedPokemon, addPokemon, deletePokemon, onDetailClick}) => {
 
-    selectedPokemon.forEach((pokemon, index) => {
-      if (index < pocketSlots.length) {
-        pocketSlots[index] = pokemon;
-      }
-    });
-  
-    return (
-      <DashBoardContainer>
-        <DashBoardTitle>나의 포켓몬</DashBoardTitle>
-        <DashBoardGroup>
-          {pocketSlots.map((pokemon, index) => (
-            <DashBoardItem key={index}>
-              {pokemon ? (
-                  <div>
-                  <img src={pokemon.img_url} alt={pokemon.korean_name} width="50" height="50" />
-                  <div>{pokemon.korean_name}</div>
-                      <DeleteButton>X</DeleteButton> 
-                </div>
-              ) : (
-                <DashBoardPokeball src="/img/pokeball.png" alt="포켓볼" />
-              )}
+
+  return (
+    <DashBoardContainer>
+      <DashBoardTitle>포켓몬 컬렉션</DashBoardTitle>
+      <DashBoardGroup>
+        {selectedPokemon.map((pokemon, index) => (
+          pokemon ? (
+            <PokemonCard
+              key={pokemon.id}
+              pokemon={pokemon}
+              index={index}
+              isSelected={true}
+              onAddPokemon={addPokemon}
+              onDeletePokemon={deletePokemon}
+              onDetailClick={() => onDetailClick(pokemon.id)}
+            />
+          ) : (
+            <DashBoardItem key={Date.now()+ index}> 
+              <DashBoardPokemonball src="/img/pokeball.png" alt="포켓볼" />
             </DashBoardItem>
-          ))}
-        </DashBoardGroup>
-      </DashBoardContainer>
-    );
+          )
+        ))}
+      </DashBoardGroup>
+    </DashBoardContainer>
+  );  
 };
 
 export default DashBoard;

@@ -12,20 +12,19 @@ const ListContainer = styled.div`
   border-radius: 10px;
 `;
 
-const PokemonList = ({ pokemonList, onAddPokemon }) => {
-    const [isSelected, setIsSelected] = useState(false);
+const PokemonList = ({ pokemonList, onAddPokemon, onDetailClick}) => {
   return (
     <ListContainer>
       {pokemonList.map(function (pokemon, index) {
         return (
-            <PokemonCard 
-                key={pokemon.id}
-                pokemon={pokemon} 
-                index={index}
-                isSelected={isSelected}
-                setIsSelected={setIsSelected}
-                onAddPokemon={onAddPokemon}
-             />
+          <PokemonCard
+            key={pokemon.id}
+            pokemon={pokemon}
+            index={index}
+            isSelected={false}
+            onAddPokemon={onAddPokemon}
+            onDetailClick={() => onDetailClick(pokemon.id)}
+          />
         );
       })}
     </ListContainer>
