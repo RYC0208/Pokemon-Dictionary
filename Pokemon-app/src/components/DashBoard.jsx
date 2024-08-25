@@ -1,25 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 import PokemonCard from "./PokemonCard";
+import { usePokemon } from "../contexts/PokemonContext";
 
-const DashBoard = ({
-  selectedPokemon,
-  addPokemon,
-  deletePokemon,
-  onDetailClick,
-}) => {
+const DashBoard = ({ onDetailClick }) => {
+  const { pokemonSlots, deletePokemon } = usePokemon(); 
+
   return (
     <DashBoardContainer>
       <DashBoardTitle>포켓몬 컬렉션</DashBoardTitle>
       <DashBoardGroup>
-        {selectedPokemon.map((pokemon, index) =>
+        {pokemonSlots.map((pokemon, index) =>
           pokemon ? (
             <PokemonCard
               key={pokemon.id}
               pokemon={pokemon}
               index={index}
               isSelected={true}
-              onAddPokemon={addPokemon}
               onDeletePokemon={deletePokemon}
               onDetailClick={() => onDetailClick(pokemon.id)}
             />

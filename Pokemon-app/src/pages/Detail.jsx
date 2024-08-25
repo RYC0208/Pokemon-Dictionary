@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import MOCK_DATA from "../mock";
+import MOCK_DATA from "../Mock";
 import PokemonDetail from "../components/PokemonDetail";
 import styled, { keyframes } from "styled-components";
 

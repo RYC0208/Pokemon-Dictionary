@@ -1,18 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import RedButton from "./common/redButton";
+import { usePokemon } from "../contexts/PokemonContext";
 
-const PokemonCard = ({
-  pokemon,
-  index,
-  isSelected,
-  onAddPokemon,
-  onDeletePokemon,
-  onDetailClick,
-}) => {
+const PokemonCard = ({ pokemon, index, isSelected, onDetailClick }) => {
+  const { addPokemon, deletePokemon } = usePokemon();
+
   return (
     <PokemonContainer onClick={onDetailClick}>
-      <img src={pokemon.img_url} alt="" />
+      <img src={pokemon.img_url} alt={pokemon.korean_name} />
       <div>
         <PokemonName>{pokemon.korean_name}</PokemonName>
         <PokemonNumber>No. {index + 1}</PokemonNumber>
@@ -22,16 +18,15 @@ const PokemonCard = ({
           text="삭제"
           onClick={(e) => {
             e.stopPropagation();
-            onDeletePokemon();
+            deletePokemon(pokemon.id);
           }}
-          stopPropagation
         />
       ) : (
         <RedButton
           text="추가"
           onClick={(e) => {
             e.stopPropagation();
-            onAddPokemon(pokemon);
+            addPokemon(pokemon);
           }}
         />
       )}
@@ -57,10 +52,12 @@ const PokemonContainer = styled.div`
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
 `;
+
 const PokemonName = styled.p`
   font-weight: bold;
   font-size: 14px;
 `;
+
 const PokemonNumber = styled.p`
   font-size: 12px;
   color: #9b9b9b;

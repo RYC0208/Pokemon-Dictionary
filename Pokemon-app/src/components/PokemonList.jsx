@@ -1,22 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import PokemonCard from "./PokemonCard";
+import { usePokemon } from "../contexts/PokemonContext";
+import MOCK_DATA from "../Mock";
 
-const PokemonList = ({ pokemonList, onAddPokemon, onDetailClick }) => {
+const PokemonList = ({ onDetailClick }) => {
+  const { addPokemon } = usePokemon();
+
   return (
     <ListContainer>
-      {pokemonList.map(function (pokemon, index) {
-        return (
-          <PokemonCard
-            key={pokemon.id}
-            pokemon={pokemon}
-            index={index}
-            isSelected={false}
-            onAddPokemon={onAddPokemon}
-            onDetailClick={() => onDetailClick(pokemon.id)}
-          />
-        );
-      })}
+      {MOCK_DATA.map((pokemon, index) => (
+        <PokemonCard
+          key={pokemon.id}
+          pokemon={pokemon}
+          index={index}
+          isSelected={false}
+          onAddPokemon={addPokemon}
+          onDetailClick={() => onDetailClick(pokemon.id)}
+        />
+      ))}
     </ListContainer>
   );
 };
