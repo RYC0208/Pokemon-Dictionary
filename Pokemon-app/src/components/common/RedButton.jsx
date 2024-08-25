@@ -1,5 +1,15 @@
-import React from 'react'
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
+const RedButton = ({ text, type = "button", onClick }) => {
+  return (
+    <PokemonButton type={type} onClick={onClick}>
+      {text}
+    </PokemonButton>
+  );
+};
+
+export default RedButton;
+
 const PokemonButton = styled.button`
   background-color: red;
   color: white;
@@ -17,12 +27,3 @@ const PokemonButton = styled.button`
     border: 1px solid black;
   }
 `;
-const RedButton = ({ text, type= "button", onClick}) => {
-  return (
-    <PokemonButton type={type} onClick={onClick}>
-      {text}
-    </PokemonButton>
-  )
-}
-
-export default RedButton

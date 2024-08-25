@@ -2,7 +2,40 @@ import React from "react";
 import styled from "styled-components";
 import PokemonCard from "./PokemonCard";
 
-// 스타일드 컴포넌트
+const DashBoard = ({
+  selectedPokemon,
+  addPokemon,
+  deletePokemon,
+  onDetailClick,
+}) => {
+  return (
+    <DashBoardContainer>
+      <DashBoardTitle>포켓몬 컬렉션</DashBoardTitle>
+      <DashBoardGroup>
+        {selectedPokemon.map((pokemon, index) =>
+          pokemon ? (
+            <PokemonCard
+              key={pokemon.id}
+              pokemon={pokemon}
+              index={index}
+              isSelected={true}
+              onAddPokemon={addPokemon}
+              onDeletePokemon={deletePokemon}
+              onDetailClick={() => onDetailClick(pokemon.id)}
+            />
+          ) : (
+            <DashBoardItem key={Date.now() + index}>
+              <DashBoardPokemonball src="/img/pokeball.png" alt="포켓볼" />
+            </DashBoardItem>
+          )
+        )}
+      </DashBoardGroup>
+    </DashBoardContainer>
+  );
+};
+
+export default DashBoard;
+
 const DashBoardContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -37,34 +70,3 @@ const DashBoardPokemonball = styled.img`
   width: 50px;
   height: 50px;
 `;
-
-const DashBoard = ({ selectedPokemon, addPokemon, deletePokemon, onDetailClick}) => {
-
-
-  return (
-    <DashBoardContainer>
-      <DashBoardTitle>포켓몬 컬렉션</DashBoardTitle>
-      <DashBoardGroup>
-        {selectedPokemon.map((pokemon, index) => (
-          pokemon ? (
-            <PokemonCard
-              key={pokemon.id}
-              pokemon={pokemon}
-              index={index}
-              isSelected={true}
-              onAddPokemon={addPokemon}
-              onDeletePokemon={deletePokemon}
-              onDetailClick={() => onDetailClick(pokemon.id)}
-            />
-          ) : (
-            <DashBoardItem key={Date.now()+ index}> 
-              <DashBoardPokemonball src="/img/pokeball.png" alt="포켓볼" />
-            </DashBoardItem>
-          )
-        ))}
-      </DashBoardGroup>
-    </DashBoardContainer>
-  );  
-};
-
-export default DashBoard;

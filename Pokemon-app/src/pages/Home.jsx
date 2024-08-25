@@ -2,15 +2,33 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 
-// 스타일드 컴포넌트
+const Home = () => {
+  const navigate = useNavigate();
+
+  const goToDex = () => {
+    navigate("/dex");
+  };
+
+  return (
+    <MainPage>
+      <StartDiv>
+        <PokemonTitle />
+        <StartDivButton onClick={goToDex}>포켓몬 도감 시작하기</StartDivButton>
+      </StartDiv>
+    </MainPage>
+  );
+};
+
+export default Home;
+
 const fadeIn = keyframes`
-  from {
-    opacity: 0.1;
-  }
-  to {
-    opacity: 1;
-  }
-`;
+    from {
+      opacity: 0.1;
+    }
+    to {
+      opacity: 1;
+    }
+  `;
 
 const MainPage = styled.main`
   display: flex;
@@ -54,21 +72,3 @@ const PokemonTitle = styled.div`
   background-repeat: no-repeat;
   background-position: center;
 `;
-const Home = () => {
-  const navigate = useNavigate();
-
-  const goToDex = () => {
-    navigate("/dex");
-  };
-
-  return (
-    <MainPage>
-      <StartDiv>
-        <PokemonTitle />
-        <StartDivButton onClick={goToDex}>포켓몬 도감 시작하기</StartDivButton>
-      </StartDiv>
-    </MainPage>
-  );
-};
-
-export default Home;

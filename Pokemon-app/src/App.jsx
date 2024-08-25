@@ -2,8 +2,9 @@ import React from "react";
 import Home from "./pages/Home";
 import Dex from "./pages/Dex";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import PkmDetail from "./pages/PkmDetail";
+import Detail from "./pages/Detail";
 import "./App.css";
+
 const App = () => {
   return (
     <div className="app-container">
@@ -11,7 +12,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/dex" element={<Dex />} />
-          <Route path="/detail" element={<PkmDetail />} />
+          <Route path="/detail" element={<Detail />} />
         </Routes>
       </BrowserRouter>
     </div>

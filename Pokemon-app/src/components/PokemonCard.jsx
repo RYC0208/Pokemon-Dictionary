@@ -1,7 +1,46 @@
 import React from "react";
 import styled from "styled-components";
 import RedButton from "./common/redButton";
-import { useNavigate } from "react-router-dom";
+
+const PokemonCard = ({
+  pokemon,
+  index,
+  isSelected,
+  onAddPokemon,
+  onDeletePokemon,
+  onDetailClick,
+}) => {
+  return (
+    <PokemonContainer onClick={onDetailClick}>
+      <img src={pokemon.img_url} alt="" />
+      <div>
+        <PokemonName>{pokemon.korean_name}</PokemonName>
+        <PokemonNumber>No. {index + 1}</PokemonNumber>
+      </div>
+      {isSelected ? (
+        <RedButton
+          text="삭제"
+          onClick={(e) => {
+            e.stopPropagation();
+            onDeletePokemon();
+          }}
+          stopPropagation
+        />
+      ) : (
+        <RedButton
+          text="추가"
+          onClick={(e) => {
+            e.stopPropagation();
+            onAddPokemon(pokemon);
+          }}
+        />
+      )}
+    </PokemonContainer>
+  );
+};
+
+export default PokemonCard;
+
 const PokemonContainer = styled.div`
   border: 1px solid rgb(146, 146, 146);
   background-color: rgba(255, 255, 255, 0.767);
@@ -26,33 +65,3 @@ const PokemonNumber = styled.p`
   font-size: 12px;
   color: #9b9b9b;
 `;
-const PokemonCard = ({pokemon, index, isSelected, onAddPokemon, onDeletePokemon, onDetailClick}) => {
-  return (
-    <PokemonContainer onClick={onDetailClick}>
-      <img src={pokemon.img_url} alt="" />
-      <div>
-        <PokemonName>{pokemon.korean_name}</PokemonName>
-        <PokemonNumber>No. {index + 1}</PokemonNumber>
-      </div>
-      {isSelected ? (
-        <RedButton
-          text="삭제"
-          onClick={(e) => {
-            e.stopPropagation();
-            onDeletePokemon();
-          }}stopPropagation
-        />
-      ) : (
-        <RedButton
-          text="추가"
-          onClick={(e) => {
-            e.stopPropagation();
-            onAddPokemon(pokemon);
-          }}
-        />
-      )}
-    </PokemonContainer>
-  );
-};
-
-export default PokemonCard;

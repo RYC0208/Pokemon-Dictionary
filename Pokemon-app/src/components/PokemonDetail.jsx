@@ -1,6 +1,33 @@
 import React from "react";
 import styled from "styled-components";
 
+function PokemonDetail({ pokemon, onGoBack }) {
+  return (
+    <>
+      {!pokemon ? (
+        <div>포켓몬을 찾을 수 없습니다.</div>
+      ) : (
+        <DetailContainer>
+          <DescriptionBox>
+            <div>
+              <PokemonImg src={pokemon.img_url} alt={pokemon.korean_name} />
+            </div>
+            <div>
+              <PokemonNumber>No. {pokemon.id}</PokemonNumber>
+              <PokemonName>{pokemon.korean_name}</PokemonName>
+              <PokemonType>속성: {pokemon.types.join(", ")}</PokemonType>
+              <p>{pokemon.description}</p>
+            </div>
+            <GoBackButton onClick={onGoBack}>이전으로</GoBackButton>
+          </DescriptionBox>
+        </DetailContainer>
+      )}
+    </>
+  );
+}
+
+export default PokemonDetail;
+
 const DetailContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -12,17 +39,15 @@ const PokemonImg = styled.img`
   height: 200px;
 `;
 const PokemonNumber = styled.p`
-    font-size: 12px;
-    color: gray;
-`
-const PokemonType = styled.p`
-    font-size: 14px;
-`
-const PokemonName = styled.h2`
-    
+  font-size: 12px;
+  color: gray;
 `;
+const PokemonType = styled.p`
+  font-size: 14px;
+`;
+const PokemonName = styled.h2``;
 const DescriptionBox = styled.div`
-display: flex;
+  display: flex;
   background-color: #ffffff;
   border: 1px solid gray;
   border-radius: 10px;
@@ -44,29 +69,3 @@ const GoBackButton = styled.button`
     border: 2px solid black;
   }
 `;
-function PokemonDetail({ pokemon, onGoBack }) {
-  return (
-    <>
-      {!pokemon ? (
-        <div>포켓몬을 찾을 수 없습니다.</div>
-      ) : (
-        <DetailContainer>
-          <DescriptionBox>
-            <div>
-              <PokemonImg src={pokemon.img_url} alt={pokemon.korean_name} />
-            </div>
-            <div>
-              <PokemonNumber>No. {pokemon.id}</PokemonNumber>
-              <PokemonName>{pokemon.korean_name}</PokemonName>
-              <PokemonType>속성: {pokemon.types.join(", ")}</PokemonType>
-              <p>{pokemon.description}</p>
-            </div>
-              <GoBackButton onClick={onGoBack}>이전으로</GoBackButton>
-          </DescriptionBox>
-        </DetailContainer>
-      )}
-    </>
-  );
-}
-
-export default PokemonDetail;
