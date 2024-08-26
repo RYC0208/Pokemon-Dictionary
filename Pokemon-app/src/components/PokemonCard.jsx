@@ -3,7 +3,7 @@ import styled from "styled-components";
 import RedButton from "./common/redButton";
 import { usePokemon } from "../contexts/PokemonContext";
 
-const PokemonCard = ({ pokemon, index, isSelected, onDetailClick }) => {
+const PokemonCard = ({ pokemon, isSelected, onDetailClick }) => {
   const { addPokemon, deletePokemon } = usePokemon();
 
   return (
@@ -11,7 +11,7 @@ const PokemonCard = ({ pokemon, index, isSelected, onDetailClick }) => {
       <img src={pokemon.img_url} alt={pokemon.korean_name} />
       <div>
         <PokemonName>{pokemon.korean_name}</PokemonName>
-        <PokemonNumber>No. {index + 1}</PokemonNumber>
+        <PokemonNumber>No. {pokemon.id}</PokemonNumber>
       </div>
       {isSelected ? (
         <RedButton
