@@ -4,7 +4,6 @@ import RedButton from "./common/redButton";
 
 const PokemonCard = ({
   pokemon,
-  index,
   isSelected,
   onAddPokemon,
   onDeletePokemon,
@@ -15,7 +14,7 @@ const PokemonCard = ({
       <img src={pokemon.img_url} alt="" />
       <div>
         <PokemonName>{pokemon.korean_name}</PokemonName>
-        <PokemonNumber>No. {index + 1}</PokemonNumber>
+        <PokemonNumber>No. {pokemon.id}</PokemonNumber>
       </div>
       {isSelected ? (
         <RedButton
