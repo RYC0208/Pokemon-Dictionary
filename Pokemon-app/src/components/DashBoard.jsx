@@ -17,7 +17,6 @@ const DashBoard = ({
             <PokemonCard
               key={pokemon.id}
               pokemon={pokemon}
-              index={index}
               isSelected={true}
               onAddPokemon={addPokemon}
               onDeletePokemon={deletePokemon}
