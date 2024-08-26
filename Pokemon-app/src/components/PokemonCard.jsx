@@ -37,7 +37,7 @@ const PokemonCard = ({ pokemon, isSelected, onDetailClick }) => {
 export default PokemonCard;
 
 const PokemonContainer = styled.div`
-  border: 1px solid rgb(146, 146, 146);
+  border: 1px solid rgb(209, 209, 209);
   background-color: rgba(255, 255, 255, 0.767);
   border-radius: 10px;
   overflow: hidden;

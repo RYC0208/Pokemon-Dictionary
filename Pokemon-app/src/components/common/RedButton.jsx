@@ -11,7 +11,7 @@ const RedButton = ({ text, type = "button", onClick }) => {
 export default RedButton;
 
 const PokemonButton = styled.button`
-  background-color: red;
+  background-color:  rgb(115, 197, 252);
   color: white;
   border: 1px solid white;
   font-size: 12px;
@@ -20,7 +20,7 @@ const PokemonButton = styled.button`
   padding: 5px 10px;
 
   &:hover {
-    background-color: #b90000;
+    background-color:#3d779e;
   }
 
   &:active {

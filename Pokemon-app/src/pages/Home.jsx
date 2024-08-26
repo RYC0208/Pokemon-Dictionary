@@ -49,8 +49,8 @@ const StartDiv = styled.div`
   animation: ${fadeIn} 2s ease-in-out;
 `;
 const StartDivButton = styled.button`
-  background-color: red;
-  border: 2px solid #3d3d3d;
+  background-color: rgb(115, 197, 252);
+  border: 2px solid #e2e2e2;
   width: 300px;
   height: 40px;
   border-radius: 15px;
@@ -58,10 +58,10 @@ const StartDivButton = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: #ff4949;
-    &:active {
-      background-color: #ffa7a7;
-    }
+    background-color: #9bd7ff;
+  }
+  &:active {
+    border: 1px solid black;
   }
 `;
 

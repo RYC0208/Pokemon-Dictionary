@@ -54,15 +54,16 @@ const DescriptionBox = styled.div`
   padding: 20px;
 `;
 const GoBackButton = styled.button`
+  color: white;
   border: 1px solid gray;
-  background-color: #f5f5f5;
+  background-color: rgb(115, 197, 252);
   border-radius: 5px;
   width: 100px;
   height: 40px;
   cursor: pointer;
 
   &:hover {
-    background-color: #d6d6d6;
+    background-color: #3d779e;
   }
 
   &:active {
