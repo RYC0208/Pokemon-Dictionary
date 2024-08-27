@@ -14,12 +14,17 @@ const PkmDetail = () => {
   const pokemon = MOCK_DATA.find((p) => p.id === pokemonId);
 
   const goBack = () => {
-    navigate(-1);
+    navigate(`/dex`);
   };
-
+  const prevPokemon = () => {
+    navigate(`/detail?id=${(pokemonId - 1)}`)
+  }
+  const nextPokemon = () => {
+    navigate(`/detail?id=${(pokemonId + 1)}`)
+  }
   return (
     <DetailPage>
-      <PokemonDetail pokemon={pokemon} onGoBack={goBack} />
+      <PokemonDetail pokemon={pokemon} onGoBack={goBack} onNextPokemon={nextPokemon} onPrevPokemon={prevPokemon} />
     </DetailPage>
   );
 };
