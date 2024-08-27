@@ -4,7 +4,7 @@ import PokemonCard from "./PokemonCard";
 import { usePokemon } from "../contexts/PokemonContext";
 
 const DashBoard = () => {
-  const { pokemonSlots, goToDetail} = usePokemon(); 
+  const { pokemonSlots} = usePokemon(); 
 
   return (
     <DashBoardContainer>

@@ -6,17 +6,16 @@ const PokemonContext = createContext();
 export const PokemonProvider = ({ children }) => {
   const [selectedPokemon, setSelectedPokemon] = useState([]);
 
-  const pokemonSlots = Array(6).fill(null);
-  selectedPokemon.forEach((pokemon, index) => {
-    pokemonSlots[index] = pokemon;
-  });
-
   const navigate = useNavigate();
 
   const goToDetail = (pokemonId) => {
     navigate(`/detail?id=${pokemonId}`);
   };
 
+  const pokemonSlots = Array(6).fill(null);
+  selectedPokemon.forEach((pokemon, index) => {
+    pokemonSlots[index] = pokemon;
+  });
 
   const addPokemon = (pokemon) => {
     const isDuplicate = selectedPokemon.find((p) => p.id === pokemon.id);
