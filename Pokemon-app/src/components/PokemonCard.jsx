@@ -48,7 +48,7 @@ const PokemonContainer = styled.div`
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
-    transform: scale(1.05);
+    transform: translateY(-25px) scale(1.1);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
 `;
