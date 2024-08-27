@@ -22,7 +22,7 @@ export const PokemonProvider = ({ children }) => {
   };
 
   const deletePokemon = (pokemonId) => {
-    setSelectedPokemon(selectedPokemon.filter((p) => p.id !== pokemonId));
+    setSelectedPokemon((pokemon) => pokemon.filter((p) => p.id !== pokemonId));
   };
 
   return (
