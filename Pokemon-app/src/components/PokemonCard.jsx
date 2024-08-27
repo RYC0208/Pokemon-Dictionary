@@ -35,21 +35,21 @@ const PokemonCard = ({ pokemon, isSelected }) => {
 };
 
 export default PokemonCard;
-
 const PokemonContainer = styled.div`
-  border: 1px solid rgb(209, 209, 209);
-  background-color: rgba(255, 255, 255, 0.767);
-  border-radius: 10px;
+  border: 2px solid rgb(179, 243, 252); 
+  background: #ffffffb0;
+  border-radius: 15px; 
   overflow: hidden;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 6px 12px;
   text-align: center;
-  padding: 10px;
+  padding: 20px; 
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
-    transform: translateY(-25px) scale(1.1);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(145deg, rgba(245, 245, 245, 0.9), rgba(157, 227, 255, 0.7));
   }
 `;
 

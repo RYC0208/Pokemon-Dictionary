@@ -88,7 +88,7 @@ const DetailContainer = styled.div`
 const DescriptionBox = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
+  background: linear-gradient(145deg, rgb(241, 241, 241), rgba(165, 231, 255, 0.904)); 
   border: 1px solid gray;
   border-radius: 10px;
   padding: 20px;
@@ -169,14 +169,17 @@ const GoBackButton = styled.button`
   height: 35px;
   width: 70px;  
   border: none;
-  background-color: #e9e9e9b3;
+  background-color: #ffffffd8;
   border-radius: 5px;
   margin-left: 530px;
-  
+  font-weight: bold;
+  font-size: 12px;
   cursor: pointer;
+  transition: transform 5s ease, box-shadow 0.3s ease;
 
   &:hover {
-    background-color: #c9c9c9;
+    background-color: #e7fcff;
+    transform: scale(1.3);
   }
 
   &:active {
