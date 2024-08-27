@@ -5,16 +5,11 @@ import PokemonList from "../components/PokemonList";
 import styled, { keyframes } from "styled-components";
 
 const Dex = () => {
-  const navigate = useNavigate();
-
-  const goToDetail = (pokemonId) => {
-    navigate(`/detail?id=${pokemonId}`);
-  };
 
   return (
     <DexPage>
-      <DashBoard onDetailClick={goToDetail} />
-      <PokemonList onDetailClick={goToDetail} />
+      <DashBoard />
+      <PokemonList />
     </DexPage>
   );
 };

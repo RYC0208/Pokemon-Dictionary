@@ -3,8 +3,7 @@ import styled from "styled-components";
 import PokemonCard from "./PokemonCard";
 import MOCK_DATA from "../Mock";
 
-const PokemonList = ({ onDetailClick }) => {
-
+const PokemonList = () => {
   return (
     <ListContainer>
       {MOCK_DATA.map((pokemon) => (
@@ -12,7 +11,6 @@ const PokemonList = ({ onDetailClick }) => {
           key={pokemon.id}
           pokemon={pokemon}
           isSelected={false}
-          onDetailClick={() => onDetailClick(pokemon.id)}
         />
       ))}
     </ListContainer>

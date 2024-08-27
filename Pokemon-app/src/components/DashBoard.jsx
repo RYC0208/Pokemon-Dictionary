@@ -3,8 +3,8 @@ import styled from "styled-components";
 import PokemonCard from "./PokemonCard";
 import { usePokemon } from "../contexts/PokemonContext";
 
-const DashBoard = ({ onDetailClick }) => {
-  const { pokemonSlots} = usePokemon(); 
+const DashBoard = () => {
+  const { pokemonSlots, goToDetail} = usePokemon(); 
 
   return (
     <DashBoardContainer>

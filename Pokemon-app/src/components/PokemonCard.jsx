@@ -3,11 +3,11 @@ import styled from "styled-components";
 import RedButton from "./common/redButton";
 import { usePokemon } from "../contexts/PokemonContext";
 
-const PokemonCard = ({ pokemon, isSelected, onDetailClick }) => {
-  const { addPokemon, deletePokemon } = usePokemon();
+const PokemonCard = ({ pokemon, isSelected }) => {
+  const { addPokemon, deletePokemon, goToDetail } = usePokemon();
 
   return (
-    <PokemonContainer onClick={onDetailClick}>
+    <PokemonContainer  onClick={() => goToDetail(pokemon.id)}>
       <img src={pokemon.img_url} alt={pokemon.korean_name} />
       <div>
         <PokemonName>{pokemon.korean_name}</PokemonName>

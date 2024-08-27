@@ -1,4 +1,5 @@
 import React, { createContext, useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 const PokemonContext = createContext();
 
@@ -9,6 +10,13 @@ export const PokemonProvider = ({ children }) => {
   selectedPokemon.forEach((pokemon, index) => {
     pokemonSlots[index] = pokemon;
   });
+
+  const navigate = useNavigate();
+
+  const goToDetail = (pokemonId) => {
+    navigate(`/detail?id=${pokemonId}`);
+  };
+
 
   const addPokemon = (pokemon) => {
     const isDuplicate = selectedPokemon.find((p) => p.id === pokemon.id);
@@ -27,7 +35,7 @@ export const PokemonProvider = ({ children }) => {
 
   return (
     <PokemonContext.Provider
-      value={{ pokemonSlots, addPokemon, deletePokemon }}
+      value={{ pokemonSlots, addPokemon, deletePokemon, goToDetail }}
     >
       {children}
     </PokemonContext.Provider>
