@@ -4,7 +4,7 @@ import PokemonCard from "./PokemonCard";
 import { usePokemon } from "../contexts/PokemonContext";
 
 const DashBoard = ({ onDetailClick }) => {
-  const { pokemonSlots, deletePokemon, setSelectedPokemon } = usePokemon(); 
+  const { pokemonSlots} = usePokemon(); 
 
   return (
     <DashBoardContainer>
@@ -16,7 +16,6 @@ const DashBoard = ({ onDetailClick }) => {
               key={pokemon.id}
               pokemon={pokemon}
               isSelected={true}
-              onDeletePokemon={deletePokemon}
               onDetailClick={() => onDetailClick(pokemon.id)}
             />
           ) : (
