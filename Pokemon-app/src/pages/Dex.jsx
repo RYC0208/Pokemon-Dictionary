@@ -32,9 +32,7 @@ const fadeIn = keyframes`
 
 const DexPage = styled.main`
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   padding: 20px;
   animation: ${fadeIn} 0.5s ease-in-out;
 `;
