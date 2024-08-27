@@ -17,14 +17,27 @@ const PkmDetail = () => {
     navigate(`/dex`);
   };
   const prevPokemon = () => {
-    navigate(`/detail?id=${(pokemonId - 1)}`)
-  }
+    if (pokemonId-1 > 0) {
+      navigate(`/detail?id=${pokemonId - 1}`);
+    }else {
+      navigate(`/detail?id=${151}`);
+    }
+  };
   const nextPokemon = () => {
-    navigate(`/detail?id=${(pokemonId + 1)}`)
-  }
+    if (pokemonId+1 < 152) {
+      navigate(`/detail?id=${pokemonId + 1}`);
+    } else{
+      navigate(`/detail?id=${1}`);
+    }
+  };
   return (
     <DetailPage>
-      <PokemonDetail pokemon={pokemon} onGoBack={goBack} onNextPokemon={nextPokemon} onPrevPokemon={prevPokemon} />
+      <PokemonDetail
+        pokemon={pokemon}
+        onGoBack={goBack}
+        onNextPokemon={nextPokemon}
+        onPrevPokemon={prevPokemon}
+      />
     </DetailPage>
   );
 };
