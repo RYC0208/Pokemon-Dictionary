@@ -19,7 +19,7 @@ src/
 │   │   └── PokemonCard.jsx
 ├── contexts/
 │   └── PokemonContext.jsx
-
+```
 
 해당 프로젝트를 진행하면서 props drilling의 비효율성과 
 
