@@ -21,7 +21,7 @@ src/
 │   └── PokemonContext.jsx
 ```
 
-##### 프로젝트 요약
+##### 프로젝트 느낀점
 
 
 해당 프로젝트를 진행하면서 props drilling의 비효율성과 
@@ -32,7 +32,7 @@ React Router Dom, styled components의 대한 지식과 활용법
 
 
 
-RTK까지 적용하였으면 더 좋은 프로젝트가 되었을태지만
+RTK까지 적용하였으면 더 좋은 프로젝트가 되었을 태지만
 
 해당 과제를 통해 Context API 까지만 내 것으로 만들어도 충분하다고 판단하여
 
