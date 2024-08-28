@@ -7,43 +7,18 @@
 컴포넌트 및 페이지 구조
 
 
+```plaintext
 src/
-
-
 ├── pages/
-
-
 │   ├── Home.jsx
-
-
 │   ├── Detail.jsx
-
-
 │   └── Dex.jsx
-
-
-├── components
-
-
+├── components/
 │   ├── Dashboard/
-
-
 │   │   └── DashBoard.jsx
-
-
 │   ├── Pokemon/
-
-
 │   │   ├── PokemonList.jsx
-
-
 │   │   ├── PokemonCard.jsx
-
-
 │   │   └── PokemonDetail.jsx
-
-
 ├── contexts/
-
-
 │   └── PokemonContext.jsx
