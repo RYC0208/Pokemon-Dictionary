@@ -1,6 +1,10 @@
 # 포켓몬 도감
 
-![Home](https://github.com/user-attachments/assets/5104120e-37a8-42db-af6d-39013b602a07) ![DashBoard](https://github.com/user-attachments/assets/fd8348d6-c5a6-4b56-a7a3-e51d40ea54cd) ![Detail](https://github.com/user-attachments/assets/b5c00066-db8b-48c5-862a-0bedc0c293d3)
+<div style="display: flex; justify-content: space-around;">
+  <img src="https://github.com/user-attachments/assets/5104120e-37a8-42db-af6d-39013b602a07" alt="Home" style="width: 30%;"/>
+  <img src="https://github.com/user-attachments/assets/fd8348d6-c5a6-4b56-a7a3-e51d40ea54cd" alt="DashBoard" style="width: 30%;"/>
+  <img src="https://github.com/user-attachments/assets/b5c00066-db8b-48c5-862a-0bedc0c293d3" alt="Detail" style="width: 30%;"/>
+</div>
 
 
 포켓몬 데이터를 활용하여 리스트에 있는 포켓몬을 대쉬보드에 추가하여 
