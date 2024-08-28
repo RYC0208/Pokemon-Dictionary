@@ -4,7 +4,7 @@
 ![Home](https://github.com/user-attachments/assets/9ac67227-79ad-4197-bf8d-5c92ed372c17)
 
 
-컴포넌트 및 페이지 구조
+### 컴포넌트 및 페이지 구조
 
 
 ```plaintext
@@ -21,15 +21,16 @@ src/
 │   └── PokemonContext.jsx
 ```
 
+##### 프로젝트 요약
+
+
 해당 프로젝트를 진행하면서 props drilling의 비효율성과 
 
 React Router Dom, styled components의 대한 지식과 활용법
 
 그리고 기능에 대한 코드 작성 및 컴포넌트를 구성하는 방법을 배울 수 있었습니다.
 
-해당 프로젝트를 진행하면서 일어난 오류들은 `오류 해결` 카테고리에 기록해 두었습니다.
 
- 
 
 RTK까지 적용하였으면 더 좋은 프로젝트가 되었을태지만
 
