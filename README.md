@@ -14,11 +14,8 @@ src/
 │   ├── Detail.jsx
 │   └── Dex.jsx
 ├── components/
-│   ├── Dashboard/
-│   │   └── DashBoard.jsx
-│   ├── Pokemon/
+│   │   ├── DashBoard.jsx
 │   │   ├── PokemonList.jsx
-│   │   ├── PokemonCard.jsx
-│   │   └── PokemonDetail.jsx
+│   │   └── PokemonCard.jsx
 ├── contexts/
 │   └── PokemonContext.jsx
